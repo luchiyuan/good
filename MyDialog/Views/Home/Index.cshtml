@@ -1,0 +1,18 @@
+﻿@model  List<MyDialog.Models.CarModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div id="commonMessage">
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <span class="carName">@item.Name</span>
+                    <span class="carDescription">@item.Description</span>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new {@class = "editLink" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
